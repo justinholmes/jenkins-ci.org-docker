@@ -1,7 +1,7 @@
 #FROM java:openjdk-7u65-jdk
 FROM java:7u65
 
-RUN apt-get update && apt-get install -y wget git curl zip && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y wget git curl zip docker.io && rm -rf /var/lib/apt/lists/*
 
 ENV JENKINS_VERSION 1.565.3
 RUN mkdir /usr/share/jenkins/
