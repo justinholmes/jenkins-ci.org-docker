@@ -15,7 +15,7 @@ ENV JENKINS_HOME /var/jenkins_home
 RUN usermod -m -d "$JENKINS_HOME" jenkins && chown -R jenkins "$JENKINS_HOME"
 VOLUME /var/jenkins_home
 
-RUN /usr/bin/echo "jenkins ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/jenkins
+RUN mkdir -p /etc/sudoers.d && echo "jenkins ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/jenkins
 
 # define url prefix for running jenkins behind Apache (https://wiki.jenkins-ci.org/display/JENKINS/Running+Jenkins+behind+Apache)
 ENV JENKINS_PREFIX /
